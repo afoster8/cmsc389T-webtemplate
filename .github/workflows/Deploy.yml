@@ -7,7 +7,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: executing
+      - name: testing
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }} 
@@ -15,5 +15,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-              cd ../pub
+              cd cmsc389T-webtemplate
               git pull
