@@ -14,5 +14,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-                cd cmsc389T-webtemplate
                 git clone git@github.com:afoster8/cmsc389T-webtemplate.git .
