@@ -6,7 +6,7 @@ jobs:
     name: Clean
     runs-on: ubuntu-latest
     steps:
-      - name: cleaning
+      - name: testing
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }} 
@@ -14,6 +14,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ../pub
              unalias rm
-             rm -rf *
+             rm -rf cmsc389T-webtemplate
