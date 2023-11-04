@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: node-web-app
-    container_name: nodejs
+    container_name: website
     restart: unless-stopped
     networks:
       - app-network
