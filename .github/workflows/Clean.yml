@@ -1,4 +1,4 @@
-name: Clean workflow
+name: clean workflow
 on:
   workflow_dispatch:
 jobs:
@@ -14,5 +14,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            unalias rm
-            rm -rf cmsc389T-webtemplate
+              unalias rm
+              rm -rf ../pub/cmsc389T-webtemplate
