@@ -1,19 +1,24 @@
-name: deployment workflow
+name: deploy
 on:
   push:
-
+  
 jobs:
-  clone:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd ../pub/cmsc389T-webtemplate
-          git pull
+      - name: Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            touch ~/.ssh/known_hosts
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            mkdir -p pub/afoster8/cmsc389T-webtemplate
+            cd /pub/afoster8/cmsc389T-webtemplate
+            git init
+            git remote add origin git@github.com:afoster8/cmsc389T-webtemplate.git
+            git pull
