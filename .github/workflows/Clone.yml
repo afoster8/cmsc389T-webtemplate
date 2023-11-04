@@ -1,21 +1,17 @@
 name: clone workflow
-on: 
-  workflow_dispatch:   
+on:
+  workflow_dispatch:
 jobs:
-  clone:
+  job_one:
     name: Clone
     runs-on: ubuntu-latest
     steps:
-      - name: cloning
+      - name: testing
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }} 
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            touch ~/.ssh/known_hosts
-            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            mkdir -p pub/afoster8
-            cd /pub/afoster8
-            git clone git@github.com:afoster8/cmsc389T-webtemplate.git
+            cd ../pub && git clone https://github.com/afoster8/cmsc389T-webtemplate.git 
