@@ -17,3 +17,9 @@ Rose quartz: #B2A3B5
 ## Changes
 
 I changed the colors of the columns to #B2A3B5, as well as adding my profile picture, adding the About Me, adding my github link, and adding Projects, including a link to one project on github.io.
+
+## Links
+
+https://afoster8.github.io/cmsc389T-webtemplate/
+
+https://terpconnect.umd.edu/~afoster8/cmsc389T-webtemplate/
